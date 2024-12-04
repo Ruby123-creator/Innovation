@@ -17,11 +17,95 @@
         display: flex;
         flex: 1; /* Take the remaining height after the header */
         .sidebar {
-            width: 5%;
-            padding: 20px 2px;
-         
+           
             background-color: #3f3f3e;
             color: white;
+            position: relative;
+            .sidebar-list{
+               display: flex;
+               flex-direction: column;
+               gap: 25px;
+               list-style: none;
+               align-items: center;
+               justify-content: center;
+               padding: 10px;
+                .sidebar-menu{
+                    cursor: pointer;
+                    .sidebar-icon{
+                     font-size: 20px;
+                     color: white;
+                     
+                    }
+
+                    .sidebar-name{
+                      font-size: 12px;
+                    }
+                }
+            }
+
+            .visible{
+                background-color: #F5F5F7;
+                width: 200px;
+                color: black;
+                position: absolute;
+                z-index: 200;
+                top: 0;
+                left: 78px;
+                height: 100%;
+
+                .menu-header{
+                    font-size: 12px;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    
+                    padding: 20px 10px;
+                    color: grey;
+                    display: flex;
+                    border-bottom: 1px solid rgb(187, 186, 186);
+                    justify-content: flex-start;
+              
+              .menu-closure{
+                position: absolute;
+                right: -10px;
+                top: 10px;
+                font-size: 12px;
+                padding: 5px;
+                background-color: white;
+                cursor: pointer;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 50%;
+                border: 0.5px solid grey;
+              }
+                }
+                ul{
+                    list-style: none;
+                    padding: 20px 10px;
+                    display: flex;
+                    gap: 15px;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-evenly;
+                    font-size: 14px;
+                    font-weight: 400;
+                    color: rgb(134, 134, 134);
+                  .menu-item{
+                    cursor: pointer;
+                    display: flex;
+                    float: left;
+                    gap: 10px;
+                    .menu-icon{
+                        font-size: 18px;
+                        color: dodgerblue;
+                        font-weight: 700;
+                    }
+                    .menu-name{
+                        text-align: left;
+                    }
+                  }
+                }
+            }
         }
         .content {
             flex: 1; /* The main content area takes the rest of the space horizontally */
