@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import sidebarList from "./sidebarList";
 import { useNavigate } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa6";
-
+import PartialViewRoute from "../../../route/partialViewRoute";
 const Sidebar = (props) => {
   const navigate = useNavigate(); // Use `useNavigate` for navigation
   const [activeMenuChild, setMenuChild] = useState();
@@ -123,6 +123,8 @@ const Sidebar = (props) => {
           ""
         )}
       </div>
+
+    
     </div>
   );
 };

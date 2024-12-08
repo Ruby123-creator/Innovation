@@ -2,15 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import Layout from './common/Layout';
 
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import PartialViewRoute from './route/partialViewRoute';
 function App() {
   return (
     <div className="App">
-      <Router>
+      <BrowserRouter>
       <Layout>
-        Main Component
+        <PartialViewRoute/>
+        {/* Main Component */}
       </Layout>
-      </Router>
+      </BrowserRouter>
     
     </div>
   );
