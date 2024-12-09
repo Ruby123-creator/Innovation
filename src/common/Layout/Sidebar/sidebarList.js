@@ -22,12 +22,12 @@ const sidebarList = [
         {
             menuName: "Products",
             iconClassName: <GoInbox/>,
-            path:"/admin/product",
+            path:"/admin/products",
         },
         {
             menuName: "Product Price",
             iconClassName: <GoInbox/>,
-            path:"/admin/product-price",
+            path:"/admin/price",
         },
         {
             menuName: "Price List",

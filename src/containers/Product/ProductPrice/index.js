@@ -1,8 +1,9 @@
 import React from 'react'
+import BreadCrumb from '../../../common/Breadcrumb'
 
 const ProductPrice = () => {
   return (
-    <div>ProductPrice</div>
+    <div><BreadCrumb/></div>
   )
 }
 

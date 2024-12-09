@@ -1,8 +1,11 @@
 import React from 'react'
+import BreadCrumb from '../../common/Breadcrumb'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard..................</div>
+    <div>
+      <BreadCrumb/>
+    </div>
   )
 }
 
