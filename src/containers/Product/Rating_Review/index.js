@@ -1,8 +1,9 @@
 import React from 'react'
+import BreadCrumb from '../../../common/Breadcrumb'
 
 const RatingReview = () => {
   return (
-    <div>RatingReview</div>
+    <div><BreadCrumb/></div>
   )
 }
 

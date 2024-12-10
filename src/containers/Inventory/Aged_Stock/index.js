@@ -1,8 +1,11 @@
 import React from 'react'
+import BreadCrumb from '../../../common/Breadcrumb'
 
 const AgedStock = () => {
   return (
-    <div>AgedStock</div>
+    <div>
+      <BreadCrumb/>
+    </div>
   )
 }
 

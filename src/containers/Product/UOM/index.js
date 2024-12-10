@@ -1,8 +1,9 @@
 import React from 'react'
+import BreadCrumb from '../../../common/Breadcrumb'
 
 const UOMContainer = () => {
   return (
-    <div>UOMContainer</div>
+    <div><BreadCrumb/></div>
   )
 }
 
