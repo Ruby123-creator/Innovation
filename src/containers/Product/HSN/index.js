@@ -1,8 +1,11 @@
 import React from 'react'
+import BreadCrumb from '../../../common/Breadcrumb'
 
 const HSNComponent = () => {
   return (
-    <div>HSNComponent</div>
+    <div>
+      <BreadCrumb/>
+    </div>
   )
 }
 

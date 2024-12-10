@@ -7,9 +7,7 @@ import ProductPrice from "../containers/Product/ProductPrice"
 import PriceList from "../containers/Product/PriceList"
 import HSNContainer from "../containers/Product/HSN"
 import Category from "../containers/Product/Category";
-
-
-
+import Products from "../containers/Product/Products";
 
 const PartialViewRoute = (props) => {
   return (

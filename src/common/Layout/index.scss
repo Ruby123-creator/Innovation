@@ -27,8 +27,14 @@
 
   .main-Content {
     display: flex;
+    width: 100%;
     flex: 1; /* Take the remaining height after the header */
+    main{
+      width: 92%;
+      margin-inline: auto;
+    }
     .sidebar {
+      width: 5%;
       background-color: #3f3f3e;
       color: white;
       position: relative;
@@ -117,6 +123,12 @@
         }
       }
     }
+
+    .breadcrumb-container{
+      padding: 16px 0px;
+      
+    }
+
     .content {
       flex: 1; /* The main content area takes the rest of the space horizontally */
       background-color: lightgray;
