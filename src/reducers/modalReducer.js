@@ -5,24 +5,20 @@ const stackModalsInitialState = {
 };
 
 export const StackModalReducer = (state = stackModalsInitialState, action) => {
-    console.log(action ,"Reducer")
+  console.log(action , state, stackModalsInitialState ,"Reducers::::::::::::::")
   switch (action.type) {
-    case MODAL_ACTIONS.PUSH_STACK_MODAL: {
-      return {
-        ...state, // Keep the current state
-        modalStack: [...state.modalStack, action.data], // Create a new array with the new modal
-      };
+    case MODAL_ACTIONS.PUSH_MODAL_STACK: {
+      
+      return { ...state , modalStack:[...state.modalStack , action.data] }
     }
-    case MODAL_ACTIONS.POP_STACK_MODAL: {
-      return {
-        ...state,
-        modalStack: state.modalStack.slice(0, -1), // Create a new array without the last element
-      };
+    case MODAL_ACTIONS.POP_UP_MODAL_STACK: {
+        const val = state.modalStack.slice(0,-1);
+      return { ...state, modalStack: val }
     }
     case MODAL_ACTIONS.CLEAR_STACK_MODAL: {
-      return { ...stackModalsInitialState }; // Reset state to initial
+      return { ...stackModalsInitialState }
     }
     default:
-      return state; // Return unchanged state for unknown actions
+      return stackModalsInitialState;
   }
-};
+}

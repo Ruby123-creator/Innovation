@@ -20,8 +20,8 @@ const PartialViewRoute = (props) => {
         />
         <Route
           
-         path="/admin/product"
-          element={<Product/>}
+         path="/admin/products"
+          element={<Products/>}
         />
       <Route
           

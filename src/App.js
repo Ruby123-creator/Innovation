@@ -18,10 +18,7 @@ function App(props) {
       <StackModal modalStack={modalStack} {...props}/>
       <Layout>
         <PartialViewRoute {...props}/>
-        {/* Main Component */}
-        <Button onClick={() => props.pushModalToStack({ title: "Test Modal", content: "Modal Content" })}>
-            Add Modal
-          </Button>
+      
       </Layout>
       </BrowserRouter>
 
