@@ -14,13 +14,9 @@ export const getUserLoginData =(payload)=>{
 
 
 export const pushModalToStack = (modalData) => {
-    console.log("Action dispatched: pushModalToStack", modalData); // Check if action is dispatched
-    return(dispatch=>{
-        dispatch({
-            type: MODAL_ACTIONS.PUSH_MODAL_STACK,
-            data: modalData,
-          })
-    })
+    return (dispatch) => {
+      dispatch({ type: MODAL_ACTIONS.PUSH_MODAL_STACK, data: modalData });
+    };
   };
   
 
