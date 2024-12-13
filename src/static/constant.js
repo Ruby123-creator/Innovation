@@ -13,3 +13,8 @@ export const MODAL_ACTIONS = {
     POP_UP_MODAL_STACK: "pop_up_modal_from_stack",
     CLEAR_STACK_MODAL: "clear_stack_from_modal"
 }
+
+
+export const PRODUCT_DETAILS ={
+    FETCH_ALL_PRODUCTS:"fetch_all_products",
+}
