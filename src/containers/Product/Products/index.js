@@ -1,56 +1,104 @@
-import React from 'react'
-import BreadCrumb from '../../../common/Breadcrumb'
-import { FaUser } from "react-icons/fa";
-import Cards from '../../../common/Cards';
-
-const Products = () => {
-  const cardData = [
-    {
-      title: "Total Products",
-      number: "1,200",
-      icon: <FaUser />,
-      borderColor: "#4CAF50", // Green
-    },
-    {
-      title: "Out of Stock",
-      number: "200",
-      icon: <FaUser />,
-      borderColor: "#FF5722", // Orange
-    },
-    {
-      title: "Sales Today",
-      number: "500",
-      icon: <FaUser />,
-      borderColor: "#2196F3", // Blue
-    },
-    {
-      title: "Pending Orders",
-      number: "80",
-      icon: <FaUser />,
-      borderColor: "#FFC107", // Yellow
-    },
-  ];
-
-  
+import React, { useEffect, useState } from 'react';
+import Products from '../../../components/Product'
+import { fetchAllProducts } from './action';
+import { connect } from 'react-redux';
+import { bindActionCreators } from '@reduxjs/toolkit';
+const ProductContainer = (props) => {
+  const columns=[{
+    item:"SKU",
+    check: true,
+    isMandatory:true,
+    key:1
+  },
+  {
+    item:"Product",
+    check: true,
+    isMandatory:true,
+    key:1
+  },
+  {
+    item:"Variants",
+    check: true,
+    isMandatory:true,
+    key:1
+  },
+  {
+    item:"CategoryName",
+    check: true,
+    isMandatory:true,
+    key:1
+  },
+  {
+    item:"HSN",
+    check: true,
+    isMandatory:true,
+    key:1
+  },
+  {
+    item:"SKU",
+    check: true,
+    isMandatory:true,
+    key:1
+  },
+  {
+    item:"Warehouse",
+    check: false,
+    isMandatory:false,
+    key:1
+  },
+  {
+    item:"BrandName",
+    check: false,
+    isMandatory:false,
+    key:1
+  },
+  {
+    item:"UPC",
+    check: false,
+    isMandatory:false,
+    key:1
+  },
+  {
+    item:"ISBN",
+    check: false,
+    isMandatory:false,
+    key:1
+  },
+]
+  const values = {
+    showColPop:false,
+    txColumns: columns,
+    pageNumber:1
+  }
+  console.log(props,"WANEDDD:::")
+  const [state , updateState] = useState(values);
+  useEffect(()=>{
+   const payload={
+    relationshipId: props.companyInfo?.defaultCompany?.relationshipId,
+    pageNumber:1,
+    pageSize:200,
+   }
+   props.fetchAllProducts(payload);
+  },[])
   return (
-    <div>
-
-      <BreadCrumb/>
-
-      <div className="cards-container">
-      {cardData.map((data, index) => (
-        <Cards
-          key={index}
-          title={data.title}
-          number={data.number}
-          icon={data.icon}
-          borderColor={data.borderColor}
-        />
-      ))}
-    </div>
-
-    </div>
+   <Products {...props} {...state} updateState={(e)=>updateState(e)}/>
   )
 }
+const mapStateToProps = (state) => {
+ 
+  return {
+    companyInfo: state.common.companyInfo,
+    allProduct: state.product?.allProducts
+  };
+};
 
-export default Products
+const mapDispatchToProps =(dispatch)=>{
+  return bindActionCreators(
+    {
+      
+       fetchAllProducts,
+    },
+    dispatch
+  )
+}
+export default connect(mapStateToProps,mapDispatchToProps)(ProductContainer);
