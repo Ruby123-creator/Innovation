@@ -4,6 +4,7 @@ import { FaUser } from "react-icons/fa";
 import Cards from "../../common/General/Cards";
 import PageHeader from "../../common/General/PageHeader";
 import { sortTable } from "../../utils";
+import "./styles.scss";
 
 const Products = (props) => {
   console.log(props, "HOME:::::::::::");
